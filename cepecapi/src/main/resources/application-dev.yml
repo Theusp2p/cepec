@@ -3,12 +3,15 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:postgresql://localhost:5435/cepecapi
+    url: jdbc:postgresql://localhost:5432/cepecapi
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

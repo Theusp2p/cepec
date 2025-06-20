@@ -18,22 +18,22 @@ public class Study {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String code;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String phase;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String sponsor;
 
-    @Column(name = "type_study", nullable = false)
+    @Column(name = "type_study", nullable = false, length = 50)
     private String typeStudy;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 255)
     private String objective;
 
     @Column(nullable = false)
@@ -51,22 +51,22 @@ public class Study {
     private Set<Participant> participants = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 15)
     private StudyStatus status;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 80)
     private String mainResponsible;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 80)
     private String emailContact;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 20)
     private String phoneContact;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 100)
     private String protocolDescription;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 500)
     private String observations;
 
 }
