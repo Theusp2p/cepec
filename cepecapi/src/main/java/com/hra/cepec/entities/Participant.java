@@ -1,11 +1,14 @@
 package com.hra.cepec.entities;
 
 import jakarta.persistence.*;
-
+import lombok.Data;
+import lombok.ToString;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table
+@Data
 public class Participant {
 
     @Id
@@ -28,6 +31,12 @@ public class Participant {
     private String phone;
 
     @ManyToMany(mappedBy = "participants")
+    @ToString.Exclude
     private Set<Study> studies = new HashSet<>();
+
+    public void addStudy(Study study) {
+        this.studies.add(study);
+        study.getParticipants().add(this);
+    }
 
 }
